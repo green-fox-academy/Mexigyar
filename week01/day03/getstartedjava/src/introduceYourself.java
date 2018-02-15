@@ -20,5 +20,3 @@ public class introduceYourself {
         System.out.println(1.83);
     }
 }
-
-white ciklus invalid command
