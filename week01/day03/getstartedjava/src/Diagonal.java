@@ -17,7 +17,7 @@ public class Diagonal {
 
         Scanner scan;
 
-        System.out.println("Enter a number!");
+        System.out.println("how many units big do you want your special box to be?");
         scan = new Scanner(System.in);
         int number;
         number = scan.nextInt();
