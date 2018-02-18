@@ -34,6 +34,7 @@ public class Diagonal {
             System.out.print(symbol);
         }
         System.out.println(" ");
+
         for (int N = 0; N < number - 2; N++) {
 
             System.out.print(symbol);
