@@ -8,9 +8,6 @@ public class doubleitems {
         for (int i = 0; i <ag.length; i++) {
             ag[i]= ag[i] * 2;
         }
-        for (int i = 0; i <ag.length ; i++) {
-            System.out.println(ag[i]);
-        }
 
     }
 }
