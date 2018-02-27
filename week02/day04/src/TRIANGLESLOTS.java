@@ -9,16 +9,32 @@ public class TRIANGLESLOTS {
     public static void mainDraw(Graphics graphics) {
 
         double WIDTHDOUBLE = 320;
-        double HEIGHTDOUBLE = 343;
 
         double ayPont = Math.sqrt(WIDTHDOUBLE*WIDTHDOUBLE-(WIDTHDOUBLE*WIDTHDOUBLE)/4);
-        int TriangleHight = 277;
+        int TriangleHight = 277128129/1000000;
+        int Magassag = HEIGHT - TriangleHight;
 
+
+
+
+
+
+        for (int i = 1; i < 23; i++) {
+            graphics.setColor(Color.blue);
+            graphics.drawLine(WIDTH/2-(WIDTH/44)*i, Magassag + (TriangleHight/22)*i,WIDTH/2+(WIDTH/44)*i, Magassag + (TriangleHight/22)*i);
+
+            graphics.setColor(Color.red );
+            graphics.drawLine(WIDTH/2-(WIDTH/44)*i, Magassag + (TriangleHight/22)*i,WIDTH-i*(WIDTH/22),HEIGHT);
+
+            graphics.setColor(Color.GREEN);
+            graphics.drawLine(i*(WIDTH/22),HEIGHT,WIDTH/2+(WIDTH/44)*i, Magassag + (TriangleHight/22)*i);
+        }
+        graphics.setColor(Color.PINK);
         graphics.drawLine(0, HEIGHT, WIDTH, HEIGHT);
-        graphics.drawLine(WIDTH,HEIGHT,WIDTH/2,HEIGHT-TriangleHight);
-        graphics.drawLine(WIDTH/2, HEIGHT-TriangleHight, 0, HEIGHT);
+        graphics.drawLine(WIDTH,HEIGHT,WIDTH/2,Magassag);
+        graphics.drawLine(WIDTH/2, Magassag, 0, HEIGHT);
 
-        
+
 
     }
 

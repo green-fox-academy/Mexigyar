@@ -16,6 +16,7 @@ public class EnvelopeStar {
             graphics.drawLine(WIDTH/2,HEIGHT-i*(HEIGHT/64),WIDTH/2 - i*(WIDTH/64), HEIGHT/2);
             }
         for (int i = 0; i < 32; i++) {
+            graphics.setColor(Color.RED);
             graphics.drawLine(WIDTH/2+1,i*(HEIGHT/64),(WIDTH/2 + i*(WIDTH/64))+1, HEIGHT/2);
             graphics.drawLine(WIDTH/2+1,i*(HEIGHT/64),(WIDTH/2 - i*(WIDTH/64))+1, HEIGHT/2);
 
