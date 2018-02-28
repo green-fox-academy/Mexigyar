@@ -19,12 +19,21 @@ public class Dominoes {
     public static List<Domino> initializeDominoes2(List<Domino> dominos){
         List<Domino> dominoes2 = new ArrayList<>();
         int lastValue;
+        int rounds = dominos.size();
         dominoes2.add(dominos.get(0));
         lastValue = dominos.get(0).getValues()[1];
         dominos.remove(0);
-        for (int i = 0; i < dominos.size(); i++) {
-            dominoes2.add()
 
+        for (int j = 0; j < rounds; j++) {
+            for (int i = 0; i < dominos.size(); i++) {
+                int nextValue = dominos.get(i).getValues()[0];
+                if (lastValue == nextValue){
+                    dominoes2.add(dominos.get(i));
+                    lastValue = dominos.get(i).getValues()[1];
+                    dominos.remove(i);
+                }
+
+            }
         }
 
      return dominoes2;
