@@ -5,6 +5,27 @@ public class Fibonacci {
 // previous two values, so the whole sequence is: 0, 1, 1, 2, 3, 5, 8, 13, 21
 // and so on. Define a recursive fibonacci(n) method that returns the nth
 // fibonacci number, with n=0 representing the start of the sequence.
+    public static int growingNumber = 1;
+    public static int ValueOfNthNumber = 0;
+    public static int preValue = 1;
+    public static int preValue2 = 0;
+    public static void fibonacciNumber(int N){
+        if (growingNumber == N){
+        }else if (N == 1){
+            System.out.println(0);
+        }else if (N == 2){
+            System.out.println(1);
+        }else {
+            ValueOfNthNumber = preValue + preValue2;
+            preValue2 = preValue;
+            preValue = ValueOfNthNumber;
+            growingNumber ++;
+            System.out.println(ValueOfNthNumber);
+            fibonacciNumber(N);
+        }
+    }
 
-    
+    public static void main(String[] args) {
+        fibonacciNumber(19);
+    }
 }
