@@ -8,8 +8,12 @@ Teacher
 teach(student) -> calls the students learn method
 answer()
      */
+    public void teach(Student student){
+        student.learn();
+    }
+    public void answer(){
+    }
 
-    
 
 }
 
