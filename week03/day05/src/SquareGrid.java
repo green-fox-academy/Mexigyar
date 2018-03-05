@@ -29,9 +29,8 @@ public class SquareGrid {
 
         int sub = size / 2;
         int loopsLeft = sub / 18;
-
+        graphics.setColor(getRandomColor());
         for (int i = 0; i < loopsLeft ; i++) {
-            graphics.setColor(getRandomColor());
             graphics.drawRect(x + sub / 2, y + sub / 2, sub, sub);
             graphics.drawRect(x + sub / 2 - i, y + sub / 2 - i, sub + 2 * i, sub + 2 * i);
             graphics.drawRect(x + sub / 2 + i, y + sub / 2 + i, sub - 2 * i, sub - 2 * i);
