@@ -9,6 +9,13 @@ public class Plant {
         waterAmount += WateringAmount;
     }
 
+    public void info(){
+        if (getWaterAmountNeeded() < getWaterAmount()){
+        System.out.println("The " + color + " Plant doesnt need water");
+        } else
+            System.out.println("The " + color + " Plant needs water");
+    }
+
     public Plant(String color) {
         this.waterAmount = 0;
         this.color = color;

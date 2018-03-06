@@ -15,4 +15,11 @@ public class Flower extends Plant {
         setWaterAmountNeeded(5);
     }
 
+    @Override
+    public void info() {
+        if (getWaterAmountNeeded() < getWaterAmount()){
+            System.out.println("The " + getColor() + " Flower doesnt need water");
+        } else
+            System.out.println("The " + getColor() + " Flower needs water");
+    }
 }

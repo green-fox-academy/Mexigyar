@@ -15,4 +15,12 @@ public class Tree extends Plant {
         setWaterAmountNeeded(10);
     }
 
+    @Override
+    public void info() {
+        if (getWaterAmountNeeded() < getWaterAmount()){
+            System.out.println("The " + getColor() + " Tree doesnt need water");
+        } else
+            System.out.println("The " + getColor() + " Tree needs water");
+    }
+
 }

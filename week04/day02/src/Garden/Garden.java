@@ -1,7 +1,8 @@
 package Garden;
 
 import java.util.ArrayList;
-import java.util.List;
+import Garden.Plant;
+
 
 
 
@@ -18,11 +19,21 @@ public class Garden {
         garden.add(tree);
     }
     public void waterGarden(double wateringAmount){
-
-        wateringAmount = wateringAmount / this.garden.size();
+        System.out.println("Watering with " + wateringAmount);
+        int plantsToWater = 0;
         for (int i = 0; i < this.garden.size(); i++) {
-            if (hasEnoughWater(this.garden.get(i)));
-
+            if (!hasEnoughWater(this.garden.get(i))){
+                plantsToWater++;
+            }
+        }
+        wateringAmount = wateringAmount / plantsToWater;
+        for (int i = 0; i < this.garden.size(); i++) {
+            if (!hasEnoughWater(this.garden.get(i))){
+                this.garden.get(i).waterPlant(wateringAmount);
+            }
+        }
+        for (int i = 0; i < this.garden.size(); i++) {
+            this.garden.get(i).info();
         }
     }
 
@@ -31,5 +42,11 @@ public class Garden {
             return true;
         } else
             return false;
+    }
+
+    public void info(){
+        for (int i = 0; i < this.garden.size(); i++) {
+            this.garden.get(i).info();
+        }
     }
 }
