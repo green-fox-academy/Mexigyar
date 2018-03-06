@@ -22,6 +22,9 @@ public class Student extends Person{
     public void introduce(){
         System.out.println("Hi, I'm " + getName() + ", a " + getAge() + "year old " + getGender() + "from " + previusOrganization + "who skipped " + skippedDays + "days from the course already.");
     }
+    public void skipDays(int daysSkipped){
+        skippedDays += daysSkipped;
+    }
 
     public String getPreviusOrganization() {
         return previusOrganization;

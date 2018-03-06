@@ -18,7 +18,7 @@ public class Person {
         this.gender = "female";
     }
 
-    public void intoduce(){
+    public void introduce(){
         System.out.println("Hi, I'm " + name +", a " + age + "year old " + gender);
     }
     public void getGoal(){
