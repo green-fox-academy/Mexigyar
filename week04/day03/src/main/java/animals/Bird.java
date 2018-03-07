@@ -1,7 +1,6 @@
 package main.java.animals;
 
-public class Bird extends Animal{
-
+public class Bird extends Animal {
     @Override
     public String breed() {
         return "laying eggs";
