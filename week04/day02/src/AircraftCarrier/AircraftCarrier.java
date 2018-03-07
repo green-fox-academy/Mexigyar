@@ -38,8 +38,7 @@ public class AircraftCarrier {
             }
         }
         for (int i = 0; i < aircraftCarrier.size(); i++) {
-            aircraftCarrier.get(i).refill(ammo);
-            ammo = aircraftCarrier.get(i).refill(ammo); //does this line refill the ammo or only returns the given parameter?
+            ammo = aircraftCarrier.get(i).refill(ammo);
         }
     }
 
