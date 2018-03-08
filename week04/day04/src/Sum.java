@@ -70,7 +70,7 @@ public class Sum {
         System.out.println("your answer is " + isItCorrectdifference(sum, answer) + " number(s) away from the correct one");//rewrite with better english
         }
         System.out.println("the Correct answer is " + sum.summList());
-        return sum.summList();
+        return isItCorrectdifference(sum, answer);
     }
 
     //method input level x(how many numbers you have to add together) calls summ() and boolean method
