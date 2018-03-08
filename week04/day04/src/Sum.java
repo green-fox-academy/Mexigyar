@@ -47,16 +47,17 @@ public class Sum {
     //scans in an int number
     public static int intScanner(){
         int number = 0;
+        String line = "";
         try{
             Scanner sc;
             sc = new Scanner(System.in);
-            number = sc.nextInt();
-            sc.close();
+            number = Integer.parseInt(sc.nextLine());
         } catch (Exception e){
             System.out.println("please enter an integer number");
         }
         return number;
     }
+    //NO need to close scanner until the end
 
     //playOneRound
     public static int playOneRound(Sum sum){
@@ -94,12 +95,12 @@ public class Sum {
         return Math.abs(sum.summList() - awnser);
     }
 
-    public static int playGame(int rounds, Sum sum){
+    public static void playGame(int rounds, Sum sum){
         int missTipping = 0;
         for (int i = 1; i <= rounds; i++) {
             missTipping += levelPlay(i, sum);
         }
-        return missTipping;
+        System.out.println("you misstipped with " + missTipping + " try to do better next time");
     }
     //make game method level(int) is the input lvl 1-5 and return result
     //add points feature later
@@ -107,8 +108,10 @@ public class Sum {
 
 
     public static void main(String[] args) {
+        System.out.println("how many rounds do you wanto play? (each round gets more difficult as the game advances)");
+        int rounds = intScanner();
         Sum summingStuff = new Sum();
-        playGame(3,summingStuff);
+        playGame(rounds,summingStuff);
     }
 
 
