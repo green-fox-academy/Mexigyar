@@ -62,18 +62,19 @@ public class Sum {
     public static int PlayOneRound(Sum sum){
         System.out.println("Sum the given numbers and enter your anwser");
         sum.printList();
-        int answer = intScanner();
-
+        int answer = intScanner();//only scans once and uses that input in the whole game
         if (isItCorrectBoolean(sum, answer)){
             System.out.println("TRUEEE");
-        } else
+
+        } else {
         System.out.println("your answer is " + isItCorrectdifference(sum, answer) + " number(s) away from the correct one");//rewrite with better english
-        System.out.println("the Correct answer is " + isItCorrectdifference(sum, answer));
+        }
+        System.out.println("the Correct answer is " + sum.summList());
         return sum.summList();
     }
 
     //method input level x(how many numbers you have to add together) calls summ() and boolean method
-    public int levelPlay(int lvl, Sum sum){
+    public static int levelPlay(int lvl, Sum sum){
         int missTipping = 0;
         sum.fill(lvl);
         missTipping += PlayOneRound(sum);
@@ -93,9 +94,12 @@ public class Sum {
         return Math.abs(sum.summList() - awnser);
     }
 
-    public int PlayGame(int rounds){
+    public static int PlayGame(int rounds, Sum sum){
         int missTipping = 0;
-        
+        for (int i = 1; i <= rounds; i++) {
+            missTipping += levelPlay(i, sum);
+        }
+        return missTipping;
     }
     //make game method level(int) is the input lvl 1-5 and return result
     //add points feature later
@@ -104,7 +108,7 @@ public class Sum {
 
     public static void main(String[] args) {
         Sum summingStuff = new Sum();
-        summingStuff.levelPlay(2,summingStuff);
+        PlayGame(3,summingStuff);
     }
 
 
