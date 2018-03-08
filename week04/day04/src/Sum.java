@@ -59,7 +59,7 @@ public class Sum {
     }
 
     //playOneRound
-    public static int PlayOneRound(Sum sum){
+    public static int playOneRound(Sum sum){
         System.out.println("Sum the given numbers and enter your anwser");
         sum.printList();
         int answer = intScanner();//only scans once and uses that input in the whole game
@@ -77,7 +77,7 @@ public class Sum {
     public static int levelPlay(int lvl, Sum sum){
         int missTipping = 0;
         sum.fill(lvl);
-        missTipping += PlayOneRound(sum);
+        missTipping += playOneRound(sum);
         sum.emptyList();
         return missTipping ;
 
@@ -94,7 +94,7 @@ public class Sum {
         return Math.abs(sum.summList() - awnser);
     }
 
-    public static int PlayGame(int rounds, Sum sum){
+    public static int playGame(int rounds, Sum sum){
         int missTipping = 0;
         for (int i = 1; i <= rounds; i++) {
             missTipping += levelPlay(i, sum);
@@ -108,7 +108,7 @@ public class Sum {
 
     public static void main(String[] args) {
         Sum summingStuff = new Sum();
-        PlayGame(3,summingStuff);
+        playGame(3,summingStuff);
     }
 
 
