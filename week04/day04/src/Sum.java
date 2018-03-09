@@ -100,6 +100,9 @@ public class Sum {
         for (int i = 1; i <= rounds; i++) {
             missTipping += levelPlay(i, sum);
         }
+        if (missTipping == 0){
+            System.out.println("VEEEERYY NICEEE you ");
+        }
         System.out.println("you misstipped with " + missTipping + " try to do better next time");
     }
     //make game method level(int) is the input lvl 1-5 and return result
