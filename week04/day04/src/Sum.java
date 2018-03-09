@@ -70,7 +70,7 @@ public class Sum {
         } else {
         System.out.println("your answer is " + isItCorrectdifference(sum, answer) + " number(s) away from the correct one");//rewrite with better english
         }
-        System.out.println("the Correct answer is " + sum.summList());
+        System.out.println("the Correct answer was " + sum.summList());
         return isItCorrectdifference(sum, answer);
     }
 
@@ -101,8 +101,10 @@ public class Sum {
             missTipping += levelPlay(i, sum);
         }
         if (missTipping == 0){
-            System.out.println("VEEEERYY NICEEE you ");
+            System.out.println("VEEEERYY NICEEE you completed all levels without even misstipping even once.");
+            System.out.println("Try to do the same on a higher lvl.");
         }
+        if (missTipping > 0)
         System.out.println("you misstipped with " + missTipping + " try to do better next time");
     }
     //make game method level(int) is the input lvl 1-5 and return result
