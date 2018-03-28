@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public class TodoList {
     ArrayList<Todo> todolist;
     File filename = new File("todoList.txt");
+    public int ID = 1;
 
     public TodoList() {
         this.todolist = new ArrayList<>();
@@ -42,7 +43,7 @@ public class TodoList {
             FileWriter fileWriter = new FileWriter(filename);
             Writer output = new BufferedWriter(fileWriter);
             for (int i = 0; i < todolist.size(); i++) {
-                output.write(todolist.get(i) + "\n");
+                output.write(todolist.get(i).getTodo() + "\n");
             }
             System.out.println("");
             System.out.println("Saved to a file");
@@ -60,13 +61,11 @@ public class TodoList {
             if (!input.ready()) {
                 throw new IOException();
             }
-            for (int i = 0; i < todolist.size(); i++) {
-
-            }
             while ((line = input.readLine()) != null) {
-                int ID = 1;
                 Todo todo = new Todo(line,ID);
+                todolist.add(todo);
                 ID ++;
+
             }
 
         } catch (IOException e) {
@@ -77,11 +76,11 @@ public class TodoList {
     public void listTasks(String args0) {
         if (args0 == "-l") {
             if (todolist.size() == 0) {
-                System.out.println("No todos for today! ¯\\_(ツ)_/¯ Miguel baby is playin roblox");
+                System.out.println("No todos for today! ¯\\_(ツ)_/¯ ");
             } else
                 for (int i = 0; i < todolist.size(); i++) {
                     int plusOne = i + 1;
-                    System.out.println(plusOne + " - " + todolist.get(i));
+                    System.out.println(plusOne + " - " + todolist.get(i).toString());
                 }
         }
     }
@@ -97,7 +96,9 @@ public class TodoList {
 
     public void addTask(String arg0, String arg1) {
         if (arg0.equals("-a")) {
-            this.todolist.add(arg1);
+            Todo todo = new Todo(arg1,ID);
+            this.todolist.add(todo);
+            ID++;
             System.out.println("\"" + arg1 + "\" -was added to the list");
             System.out.println("this is your " + this.todolist.size() + ". task on your todo list now");
         }
@@ -114,7 +115,7 @@ public class TodoList {
     public void removeTask(String args0, String args1) {
         if (args0 == "-r") {
             int noOfTask = Integer.parseInt(args1);
-            System.out.println("task " + "\"" + this.todolist.get(noOfTask - 1) + "\"" + " has been removed");
+            System.out.println("task " + "\"" + this.todolist.get(noOfTask - 1).toString() + "\"" + " has been removed");
             this.todolist.remove(noOfTask - 1);
             System.out.println("");
         }
@@ -132,7 +133,7 @@ public class TodoList {
     public void checkTask(String args0, String args1) {
         if (args0 == "-c") {
             int noOfTask = Integer.parseInt(args1);
-            System.out.println("your " + noOfTask + "." + "task is " + "\"" + todolist.get(noOfTask - 1) + "\"");
+            System.out.println("your " + noOfTask + "." + "task is " + "\"" + todolist.get(noOfTask - 1).toString() + "\"");
         }
     }
 

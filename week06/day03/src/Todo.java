@@ -9,7 +9,18 @@ public class Todo {
         this.ID = ID;
     }
 
+    @Override
+    public String toString() {
+        return checkbox() + todo;
+    }
 
+    public String checkbox(){
+
+        if (isCompleted()){
+            return "[x] ";
+        }else
+            return "[ ] ";
+    }
 
     public void setTodo(String todo) {
         this.todo = todo;
