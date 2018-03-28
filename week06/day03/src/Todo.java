@@ -9,6 +9,12 @@ public class Todo {
         this.ID = ID;
     }
 
+    public Todo(String todo, boolean completed, int ID) {
+        this.todo = todo;
+        this.completed = completed;
+        this.ID = ID;
+    }
+
     @Override
     public String toString() {
         return checkbox() + todo;

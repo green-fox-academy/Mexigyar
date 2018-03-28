@@ -1,5 +1,5 @@
 public class argHandler {
-    public static void argHandler(String[] args, TodoList todoList){
+    public static void argHandler(String[] args, Container container){
 
         System.out.println("");
         System.out.println("here are the arguments you gave");
@@ -10,12 +10,12 @@ public class argHandler {
         }
 
         if (args.length == 0) {
-            todoList.noArg();
+            container.noArg();
         } else {
             if (args.length == 1) {
-                todoList.oneArg(args[0]);
+                container.oneArg(args[0]);
             } else if (args.length == 2) {
-                todoList.twoArgs(args[0], args[1]);
+                container.twoArgs(args[0], args[1]);
             }
         }
     }

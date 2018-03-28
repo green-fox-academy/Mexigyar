@@ -1,13 +1,13 @@
 import java.io.*;
 import java.util.ArrayList;
 
-public class TodoList {
-    ArrayList<Todo> todolist;
+public class Container {
+    ArrayList<Todo> todoList;
     File filename = new File("todoList.txt");
     public int ID = 1;
 
-    public TodoList() {
-        this.todolist = new ArrayList<>();
+    public Container() {
+        this.todoList = new ArrayList<>();
     }
 
     public void noArg(){
@@ -42,8 +42,8 @@ public class TodoList {
         try {
             FileWriter fileWriter = new FileWriter(filename);
             Writer output = new BufferedWriter(fileWriter);
-            for (int i = 0; i < todolist.size(); i++) {
-                output.write(todolist.get(i).getTodo() + "\n");
+            for (int i = 0; i < todoList.size(); i++) {
+                output.write(todoList.get(i).getTodo() + "\n");
             }
             System.out.println("");
             System.out.println("Saved to a file");
@@ -54,39 +54,20 @@ public class TodoList {
         }
     }
 
-    public void importList() {
-        String line;
-        try {
-            BufferedReader input = new BufferedReader(new FileReader("todoList.txt"));
-            if (!input.ready()) {
-                throw new IOException();
-            }
-            while ((line = input.readLine()) != null) {
-                Todo todo = new Todo(line,ID);
-                todolist.add(todo);
-                ID ++;
-
-            }
-
-        } catch (IOException e) {
-            System.out.println(e);
-        }
-    }
-
     public void listTasks(String args0) {
-        if (args0 == "-l") {
-            if (todolist.size() == 0) {
+        if (args0.equals("-l")) {
+            if (todoList.size() == 0) {
                 System.out.println("No todos for today! ¯\\_(ツ)_/¯ ");
             } else
-                for (int i = 0; i < todolist.size(); i++) {
+                for (int i = 0; i < todoList.size(); i++) {
                     int plusOne = i + 1;
-                    System.out.println(plusOne + " - " + todolist.get(i).toString());
+                    System.out.println(plusOne + " - " + todoList.get(i).toString());
                 }
         }
     }
 
     public void addTask(String arg0) {
-        if (arg0 == "-a") {
+        if (arg0.equals("-a")) {
             System.out.println("you forgot to give a task to add to the todoList");
             System.out.println("you can add your task by writing it ");
             System.out.println("after the \" -a \" command between the \"(write your task here)\" signs");
@@ -97,10 +78,10 @@ public class TodoList {
     public void addTask(String arg0, String arg1) {
         if (arg0.equals("-a")) {
             Todo todo = new Todo(arg1,ID);
-            this.todolist.add(todo);
+            this.todoList.add(todo);
             ID++;
             System.out.println("\"" + arg1 + "\" -was added to the list");
-            System.out.println("this is your " + this.todolist.size() + ". task on your todo list now");
+            System.out.println("this is your " + this.todoList.size() + ". task on your todo list now");
         }
     }
 
@@ -113,10 +94,10 @@ public class TodoList {
     }
 
     public void removeTask(String args0, String args1) {
-        if (args0 == "-r") {
+        if (args0.equals("-r")) {
             int noOfTask = Integer.parseInt(args1);
-            System.out.println("task " + "\"" + this.todolist.get(noOfTask - 1).toString() + "\"" + " has been removed");
-            this.todolist.remove(noOfTask - 1);
+            System.out.println("task " + "\"" + this.todoList.get(noOfTask - 1).toString() + "\"" + " has been removed");
+            this.todoList.remove(noOfTask - 1);
             System.out.println("");
         }
 
@@ -124,16 +105,16 @@ public class TodoList {
 
 
     public void checkTask(String args0) {
-        if (args0 == "-c") {
+        if (args0.equals("-c")) {
             System.out.println("app entered -c command box");
             System.out.println("please enter the index of the task you want to check");
         }
     }
 
     public void checkTask(String args0, String args1) {
-        if (args0 == "-c") {
+        if (args0.equals("-c")) {
             int noOfTask = Integer.parseInt(args1);
-            System.out.println("your " + noOfTask + "." + "task is " + "\"" + todolist.get(noOfTask - 1).toString() + "\"");
+            System.out.println("your " + noOfTask + "." + "task is " + "\"" + todoList.get(noOfTask - 1).toString() + "\"");
         }
     }
 
