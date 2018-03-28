@@ -18,7 +18,7 @@ public class fileHandler {
             System.out.println(e);
         }
     }
-    
+
 
 
     public static boolean isItCompleted(int n){
