@@ -91,7 +91,7 @@ public class TodoList {
     }
 
     public void addTask(String arg0, String arg1) {
-        if (arg0 == "-a") {
+        if (arg0.equals("-a")) {
             this.todolist.add(arg1);
             System.out.println("\"" + arg1 + "\" -was added to the list");
             System.out.println("this is your " + this.todolist.size() + ". task on your todo list now");
