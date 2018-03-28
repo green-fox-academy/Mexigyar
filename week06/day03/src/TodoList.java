@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class TodoList {
-    ArrayList<String> todolist;
+    ArrayList<Todo> todolist;
     File filename = new File("todoList.txt");
 
     public TodoList() {
@@ -60,8 +60,13 @@ public class TodoList {
             if (!input.ready()) {
                 throw new IOException();
             }
+            for (int i = 0; i < todolist.size(); i++) {
+
+            }
             while ((line = input.readLine()) != null) {
-                todolist.add(line);
+                int ID = 1;
+                Todo todo = new Todo(line,ID);
+                ID ++;
             }
 
         } catch (IOException e) {
