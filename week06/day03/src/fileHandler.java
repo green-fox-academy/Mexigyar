@@ -1,6 +1,7 @@
 
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -9,23 +10,45 @@ public class fileHandler {
     public static void importList(Container container) {
         try {
             Scanner todoListFile = new Scanner(new File("todoList.txt"));
-            while (todoListFile.hasNextLine() ){
-                container.todoList.add(new Todo(todoListFile.nextLine(),container.ID));
-                container.ID++;
+            ArrayList<String> helpingList = new ArrayList<>();
+            ArrayList<String> TaskList = new ArrayList<>();
+            ArrayList<String> BooList = new ArrayList<>();
+            while (todoListFile.hasNextLine()){
+                helpingList.add(todoListFile.nextLine());
             }
             todoListFile.close();
-        } catch (Exception e){
+            for (int i = 0; i < helpingList.size(); i++) {
+                String [] strings = helpingList.get(i).split(",");
+                TaskList.add(strings[0]);
+                BooList.add(strings[1]);
+            }
+
+            for (int i = 0; i < TaskList.size(); i++) {
+                container.todoList.add(new Todo(TaskList.get(i),completedIntToBoo(stringToInt(BooList.get(i))) ,container.ID));
+                container.ID++;
+            }
+        } catch (Exception e) {
             System.out.println(e);
         }
     }
 
+    public static int stringToInt(String string){
+        return Integer.parseInt(string);
+    }
 
 
-    public static int isItCompleted(boolean b){
-        if (b){
+    public static int completedBooToInt(boolean b) {
+        if (b) {
             return 1;
         } else
             return 0;
+    }
+
+    public static boolean completedIntToBoo(int n) {
+        if (n == 1) {
+            return true;
+        } else
+            return false;
     }
 
     public static void saveToFile(Container container) {
@@ -33,7 +56,7 @@ public class fileHandler {
             FileWriter fileWriter = new FileWriter("todoList.txt");
             Writer output = new BufferedWriter(fileWriter);
             for (int i = 0; i < container.todoList.size(); i++) {
-                output.write(container.todoList.get(i).getTodo() + " " + isItCompleted(container.todoList.get(i).isCompleted()) + "\n");
+                output.write(container.todoList.get(i).getTodo() + "," + completedBooToInt(container.todoList.get(i).isCompleted()) + "\n");
             }
             System.out.println("");
             System.out.println("Saved to a file");
