@@ -21,11 +21,11 @@ public class fileHandler {
 
 
 
-    public static boolean isItCompleted(int n){
-        if (n == 0){
-            return false;
+    public static int isItCompleted(boolean b){
+        if (b){
+            return 1;
         } else
-            return true;
+            return 0;
     }
 
     public static void saveToFile(Container container) {
@@ -33,7 +33,7 @@ public class fileHandler {
             FileWriter fileWriter = new FileWriter("todoList.txt");
             Writer output = new BufferedWriter(fileWriter);
             for (int i = 0; i < container.todoList.size(); i++) {
-                output.write(container.todoList.get(i).getTodo() + "\n");
+                output.write(container.todoList.get(i).getTodo() + " " + isItCompleted(container.todoList.get(i).isCompleted()) + "\n");
             }
             System.out.println("");
             System.out.println("Saved to a file");
