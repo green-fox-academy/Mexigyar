@@ -53,14 +53,19 @@ public class fileHandler {
         } else
             return false;
     }
+    
+
 
     public static void saveToFile(Container container) {
         try {
             FileWriter fileWriter = new FileWriter("todoList.txt");
             Writer output = new BufferedWriter(fileWriter);
-            for (int i = 0; i < container.todoList.size(); i++) {
-                output.write(container.todoList.get(i).getTodo() + "," + completedBooToInt(container.todoList.get(i).isCompleted()) + "," +container.todoList.get(i).getID() + "," +container.todoList.get(i).getCreatedAt() + "\n");
+            for (Todo todo: container.todoList) {
+                output.write(todo.getTodo() + "," + completedBooToInt(todo.isCompleted()) + "," +todo.getID() + "," +todo.getCreatedAt() + "\n");
             }
+
+
+
             System.out.println("");
             System.out.println("Saved to a file");
             output.close();
@@ -69,4 +74,5 @@ public class fileHandler {
             System.out.println("saveToFile method exception occured");
         }
     }
+
 }
