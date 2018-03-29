@@ -4,7 +4,6 @@ public class Main {
         fileHandler.importList(container);
         argHandler.argHandler(args, container);
         fileHandler.saveToFile(container);
-        fileHandler.saveToFile222(container);
     }
 }
 

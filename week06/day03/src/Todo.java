@@ -1,7 +1,14 @@
+import java.time.LocalDateTime;
+
 public class Todo {
     String todo;
     boolean completed;
     int ID;
+    int createdAt;
+    int completedAt;
+
+
+
 
     public Todo(String todo, int ID) {
         this.todo = todo;

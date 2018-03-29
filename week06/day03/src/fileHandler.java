@@ -13,6 +13,7 @@ public class fileHandler {
             ArrayList<String> helpingList = new ArrayList<>();
             ArrayList<String> TaskList = new ArrayList<>();
             ArrayList<String> BooList = new ArrayList<>();
+            ArrayList<String> IDList = new ArrayList<>();
             while (todoListFile.hasNextLine()){
                 helpingList.add(todoListFile.nextLine());
             }
@@ -21,11 +22,11 @@ public class fileHandler {
                 String [] strings = helpingList.get(i).split(",");
                 TaskList.add(strings[0]);
                 BooList.add(strings[1]);
+                IDList.add(strings[2]);
             }
 
             for (int i = 0; i < TaskList.size(); i++) {
-                container.todoList.add(new Todo(TaskList.get(i),completedIntToBoo(stringToInt(BooList.get(i))) ,container.ID));
-                container.ID++;
+                container.todoList.add(new Todo(TaskList.get(i),completedIntToBoo(stringToInt(BooList.get(i))) ,stringToInt(IDList.get(i)) ));
             }
         } catch (Exception e) {
             System.out.println(e);
@@ -56,7 +57,7 @@ public class fileHandler {
             FileWriter fileWriter = new FileWriter("todoList.txt");
             Writer output = new BufferedWriter(fileWriter);
             for (int i = 0; i < container.todoList.size(); i++) {
-                output.write(container.todoList.get(i).getTodo() + "," + completedBooToInt(container.todoList.get(i).isCompleted()) + "\n");
+                output.write(container.todoList.get(i).getTodo() + "," + completedBooToInt(container.todoList.get(i).isCompleted()) + "," +container.todoList.get(i).getID() + "\n");
             }
             System.out.println("");
             System.out.println("Saved to a file");
@@ -64,23 +65,6 @@ public class fileHandler {
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("saveToFile method exception occured");
-        }
-    }
-
-    public static void saveToFile222(Container container) {
-        try {
-            FileWriter fileWriter = new FileWriter("isCompleted.txt");
-            Writer output = new BufferedWriter(fileWriter);
-            for (int i = 0; i < container.todoList.size(); i++) {
-                if (container.todoList.get(i).isCompleted()) {
-                    output.write(1 + "\n");
-                } else
-                    output.write(0 + "\n");
-            }
-            output.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("saveToFile222 method exception occured");
         }
     }
 }
