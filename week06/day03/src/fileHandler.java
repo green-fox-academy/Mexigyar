@@ -14,6 +14,7 @@ public class fileHandler {
             ArrayList<String> TaskList = new ArrayList<>();
             ArrayList<String> BooList = new ArrayList<>();
             ArrayList<String> IDList = new ArrayList<>();
+            ArrayList<String> CreatedAtList = new ArrayList<>();
             while (todoListFile.hasNextLine()){
                 helpingList.add(todoListFile.nextLine());
             }
@@ -23,10 +24,11 @@ public class fileHandler {
                 TaskList.add(strings[0]);
                 BooList.add(strings[1]);
                 IDList.add(strings[2]);
+                CreatedAtList.add(strings[3]);
             }
 
             for (int i = 0; i < TaskList.size(); i++) {
-                container.todoList.add(new Todo(TaskList.get(i),completedIntToBoo(stringToInt(BooList.get(i))) ,stringToInt(IDList.get(i)) ));
+                container.todoList.add(new Todo(TaskList.get(i), completedIntToBoo(stringToInt(BooList.get(i))), stringToInt(IDList.get(i)),  CreatedAtList.get(i)));
             }
         } catch (Exception e) {
             System.out.println(e);
@@ -57,7 +59,7 @@ public class fileHandler {
             FileWriter fileWriter = new FileWriter("todoList.txt");
             Writer output = new BufferedWriter(fileWriter);
             for (int i = 0; i < container.todoList.size(); i++) {
-                output.write(container.todoList.get(i).getTodo() + "," + completedBooToInt(container.todoList.get(i).isCompleted()) + "," +container.todoList.get(i).getID() + "\n");
+                output.write(container.todoList.get(i).getTodo() + "," + completedBooToInt(container.todoList.get(i).isCompleted()) + "," +container.todoList.get(i).getID() + "," +container.todoList.get(i).getCreatedAt() + "\n");
             }
             System.out.println("");
             System.out.println("Saved to a file");

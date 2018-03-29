@@ -4,7 +4,7 @@ public class Todo {
     String todo;
     boolean completed;
     int ID;
-    int createdAt;
+    String createdAt;
     int completedAt;
 
 
@@ -14,12 +14,20 @@ public class Todo {
         this.todo = todo;
         this.completed = false;
         this.ID = ID;
+        this.createdAt = getCurrentTime();
     }
 
-    public Todo(String todo, boolean completed, int ID) {
+    public Todo(String todo, boolean completed, int ID, String createdAt) {
         this.todo = todo;
         this.completed = completed;
         this.ID = ID;
+        this.createdAt = createdAt;
+    }
+
+    public String getCurrentTime(){
+        LocalDateTime currentTime;
+        currentTime = LocalDateTime.now();
+        return currentTime.toString();
     }
 
     @Override
@@ -57,5 +65,21 @@ public class Todo {
 
     public int getID() {
         return ID;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public int getCompletedAt() {
+        return completedAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public void setCompletedAt(int completedAt) {
+        this.completedAt = completedAt;
     }
 }
