@@ -16,10 +16,10 @@ public class BankAccount {
 
     @Override
     public String toString() {
-        return "BankAccount{" +
-                "name='" + name + '\'' +
-                ", balance=" + balance +
-                ", animalType='" + animalType + '\'' +
+        return "name='" + name + '\'' +
+                ", balance=" + balance + " " + currency +
+                ", animalType='" + animalType +
                 '}';
     }
 }
+
