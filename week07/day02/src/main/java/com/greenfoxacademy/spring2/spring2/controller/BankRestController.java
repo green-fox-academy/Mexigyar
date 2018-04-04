@@ -11,7 +11,7 @@ public class BankRestController {
     @RequestMapping(value = "/show")
     public String show(){
 
-        String accountData = new BankAccount("Simba", 2000, "lion", "zebra").toString();
+        String accountData = new BankAccount("Simba", 2000, "lion", "zebra", true).toString();
         return  accountData;
     }
 }

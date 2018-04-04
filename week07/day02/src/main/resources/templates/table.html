@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+
+<table style="width: 100%">
+    <tr>
+        <th>ID</th>
+        <th>name</th>
+        <th>Balance</th>
+        <th>Race</th>
+    <tr th:each =" bankaccount, accountID : ${accounts}">
+        <td th:text="${accountID.index+1}">
+        <td th:style="${bankaccount.isKing() == true ? 'color: gold;' : 'color: black;'}"
+            th:text="${bankaccount.getName()}"></td>
+        <td th:text="${bankaccount.getBalance()} + ' ' + ${bankaccount.getCurrency()}"></td>
+        <td th:text="${bankaccount.getAnimalType()}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

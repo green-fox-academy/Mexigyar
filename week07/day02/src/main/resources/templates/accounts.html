@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<li th:each="account : ${accounts}"> <td th:text="${accountStat.count} + '.  '  + ${account}" >Account data'</td> </li>
+<li th:each="account : ${accounts}"> <td th:utext="${accountStat.count} + '.  '  + ${account}" >Account data'</td> </li>
 
 </body>
 </html>
