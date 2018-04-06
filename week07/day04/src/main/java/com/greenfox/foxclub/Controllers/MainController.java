@@ -16,6 +16,8 @@ public class MainController {
     @GetMapping(value = "/")
     public String index2(@RequestParam(name = "foxname", required = false) String name, Model model){
         model.addAttribute("foxname",name);
+        model.addAttribute("food",fox.getFood());
+        model.addAttribute("drink",fox.getDrink());
         return "index";
     }
 

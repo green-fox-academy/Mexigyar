@@ -20,10 +20,10 @@ public class Fox {
     @Autowired
 
     public Fox() {
-        this.name = "";
-        this.color = "";
-        this.food = "";
-        this.drink = "";
+        this.name = "okazaki";
+        this.color = "yellow";
+        this.food = "sushi";
+        this.drink = "water";
     }
 
     public void setName(String name) {
@@ -40,5 +40,21 @@ public class Fox {
 
     public String getColor() {
         return color;
+    }
+
+    public void setFood(String food) {
+        this.food = food;
+    }
+
+    public void setDrink(String drink) {
+        this.drink = drink;
+    }
+
+    public String getFood() {
+        return food;
+    }
+
+    public String getDrink() {
+        return drink;
     }
 }
