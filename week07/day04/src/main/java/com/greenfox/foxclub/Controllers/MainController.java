@@ -32,4 +32,9 @@ public class MainController {
         return "redirect:/?foxname=" + foxname;
     }
 
+
+    @GetMapping(value = "/nutrition_store")
+    public String nutStore(){
+        return "nutritionstore";
+    }
 }
