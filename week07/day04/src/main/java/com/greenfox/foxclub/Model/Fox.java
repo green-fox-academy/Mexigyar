@@ -7,15 +7,23 @@ import org.springframework.stereotype.Service;
 public class Fox {
     String name;
     String color;
+    String food;
+    String drink;
 
     public Fox(String name, String color) {
         this.name = name;
         this.color = color;
     }
+
+
+
     @Autowired
+
     public Fox() {
-        this.color = "green";
-        this.name = "basic fox";
+        this.name = "";
+        this.color = "";
+        this.food = "";
+        this.drink = "";
     }
 
     public void setName(String name) {
