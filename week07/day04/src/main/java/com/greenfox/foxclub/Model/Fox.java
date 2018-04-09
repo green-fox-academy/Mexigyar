@@ -20,9 +20,9 @@ public class Fox {
     @Autowired
 
     public Fox() {
-        this.name = "okazaki";
+        this.name = "Random Fox";
         this.color = "yellow";
-        this.food = "sushi";
+        this.food = "everything";
         this.drink = "water";
     }
 
