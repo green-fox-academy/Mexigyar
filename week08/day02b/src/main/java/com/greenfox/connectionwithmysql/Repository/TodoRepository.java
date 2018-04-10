@@ -1,6 +1,6 @@
-package com.greenfox.sqldemo;
+package com.greenfox.connectionwithmysql.Repository;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.greenfox.connectionwithmysql.Model.Todo;
 import org.springframework.data.repository.CrudRepository;
 
 
