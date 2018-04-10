@@ -4,6 +4,23 @@
     <title>Thymeleaf Exercise #</title>
     <link rel="stylesheet" th:href="@{/style.css}" />
     <meta charset="utf-8" />
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 5px solid #000000;
+            text-align: left;
+            padding: 13px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
 </head>
 <body>
 
@@ -12,8 +29,8 @@
     <tr>
         <th>ID</th>
         <th>Title</th>
-        <th>Urgent</th>
         <th>Done</th>
+        <th>Urgent</th>
     </tr>
     <tr th:each="todo: ${todos}">
         <td th:text="${todo.getId()}"></td>
