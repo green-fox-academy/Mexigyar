@@ -11,21 +11,40 @@
     </style>
 </head>
 <body class="text-center">
-<form class="form-signin">
-    <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-    <div class="checkbox mb-3">
-        <label>
-            <input type="checkbox" value="remember-me"> Remember me
-        </label>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://localhost:8080/todo">TodoListApp</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="http://localhost:8080/todo/">Your list</a></li>
+            <li><a href="http://localhost:8080/todo/add">Add Task</a></li>
+            <li><a href="#">New Features Coming Soon...</a></li>
+        </ul>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+</nav>
+
+
+<form class="form-signin">
+
+    <form action="/todo/">
+        <img class="mb-4" src=http://downloadicons.net/sites/default/files/list-icon-67.png alt="" width="72" height="72">
+        <h1>Welcome to TodoApp</h1>
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+    </form>
 </form>
+
 
 <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
 <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>

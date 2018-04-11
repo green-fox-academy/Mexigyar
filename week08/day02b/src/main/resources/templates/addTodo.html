@@ -1,18 +1,41 @@
-<!DOCTYPE html>
+html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Thymeleaf Exercise #</title>
-    <link rel="stylesheet" th:href="@{/style.css}" />
-    <meta charset="utf-8" />
+    <link href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="utf-8"/>
+
+    <style>
+    </style>
 </head>
-<body>
+<body class="text-center">
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://localhost:8080/todo">TodoListApp</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="http://localhost:8080/todo/">Your list</a></li>
+            <li><a href="http://localhost:8080/todo/add">Add Task</a></li>
+            <li><a href="#">New Features Coming Soon...</a></li>
+        </ul>
+    </div>
+</nav>
 
-<h1>Add a new task to your list</h1>
-
-<form action="/action_page.php">
-    Add new Task:<br>
-    <input type="text" name="newTask"><br>
-    <input type="submit" value="Submit">
+<form>
+    <div class="form-group">
+        <label for="exampleTask">Add new task</label>
+        <input type="String" class="form-control" id="exampleTask" aria-describedby="help" placeholder="Enter new task">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <button type="submit" class="btn btn-primary">Add to list</button>
 </form>
+
+
+<script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+
 </body>
 </html>
