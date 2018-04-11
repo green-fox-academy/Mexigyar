@@ -28,10 +28,10 @@ public class TodoController {
     public String list(Model model, @RequestParam(value = "isActive",required = false) Boolean isActive) {
        if (isActive != null){
            model.addAttribute("todos", todoRepository.findAllByDone(!isActive));
-           return "todolist";
+           return "list";
        }else
         model.addAttribute("todos", todos());
-        return "todolist";
+        return "list";
     }
 
     @GetMapping(value = "/add")
