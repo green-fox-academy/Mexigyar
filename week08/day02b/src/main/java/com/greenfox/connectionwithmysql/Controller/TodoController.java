@@ -39,6 +39,11 @@ public class TodoController {
         return "addTodo";
     }
 
+    @GetMapping(value = "")
+    public String OpeningWindow(Model model){
+        return "opening";
+    }
+
 
     public ArrayList<Todo> todos() {
         ArrayList<Todo> todos = new ArrayList<>();

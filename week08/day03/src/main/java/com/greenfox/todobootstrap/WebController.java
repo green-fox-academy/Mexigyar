@@ -10,9 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class WebController {
 
 
+    @GetMapping(value = "/test2")
+    public String add(Model model) {
+        return "test2";
+    }
+
+
 
     @GetMapping(value = "/test")
-    public String add(Model model){
+    public String add2(Model model) {
         return "test";
     }
 }
