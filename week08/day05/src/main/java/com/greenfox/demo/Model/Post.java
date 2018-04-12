@@ -1,3 +1,5 @@
+package com.greenfox.demo.Model;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,12 +13,16 @@ public class Post {
     Long id;
     int votes;
     String link;
+    String description;
 
-    public Post(int votes, String link) {
-        this.votes = votes;
+    public Post(String link, String description) {
+        this.votes = 0;
         this.link = link;
+        this.description =description;
     }
 
     public Post() {
     }
+
+
 }
