@@ -29,4 +29,9 @@ public class WebController {
         return "main";
     }
 
+    @GetMapping(value = "/add_post")
+    public String addPost(Model model){
+        return "addpost";
+    }
+
 }
