@@ -1,6 +1,5 @@
 package com.greenfox.connectionwithmysql;
 
-import com.greenfox.connectionwithmysql.Model.Todo;
 import com.greenfox.connectionwithmysql.Repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
