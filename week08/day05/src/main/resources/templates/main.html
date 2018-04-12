@@ -11,8 +11,31 @@
     </style>
 </head>
 <body>
+<h1>Reddit copy page</h1>
 
-<h3>joooo</h3>
+<table class="table">
+    <thead>
+
+    <tr>
+        <th scope="col">Votes</th>
+        <th scope="col">+</th>
+        <th scope="col">-</th>
+        <th scope="col">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row"></th>
+    <tr th:each="post: ${posts}">
+        <td th:text="${post.getVotes()}"></td>
+        <td>+</td>
+        <td>-</td>
+        <td th:text="${post.getDescription()}"></td>
+    </tr>
+    </tr>
+    </tbody>
+</table>
+
 <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
 <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </body>

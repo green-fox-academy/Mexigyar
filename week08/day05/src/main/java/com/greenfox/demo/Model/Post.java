@@ -24,5 +24,35 @@ public class Post {
     public Post() {
     }
 
+    public Long getId() {
+        return id;
+    }
 
+    public int getVotes() {
+        return votes;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setVotes(int votes) {
+        this.votes = votes;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }
