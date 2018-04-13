@@ -2,6 +2,7 @@ package com.greenfox.demo.Controllers;
 
 import com.greenfox.demo.Model.Post;
 import com.greenfox.demo.Repository.PostRepo;
+import com.greenfox.demo.Service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +18,9 @@ public class WebController {
 
     @Autowired
     PostRepo postRepo;
+
+    @Autowired
+    PostService postService;
 
 
     @GetMapping(value = "/")
