@@ -8,31 +8,77 @@
     <meta charset="utf-8"/>
 
     <style>
+        .pagination {
+            display: inline-block;
+        }
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 10px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+        }
+        .pagination a.active {
+            background-color: #000000;
+            color: white;
+        }
+        .pagination a:hover:not(.active) {background-color: #ddd;}
     </style>
 </head>
+
 <body>
-<h1>Reddit copy page</h1>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Reddit</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="/reddit/">Trending posts</a></li>
+            <li><a href="/reddit/add_post">Add new post</a></li>
+        </ul>
+    </div>
+</nav>
 
 <table class="table">
     <thead>
 
     <tr>
         <th scope="col">Votes</th>
-        <th scope="col">+</th>
-        <th scope="col">-</th>
+        <th scope="col">
+            Action
+        </th>
         <th scope="col">Description</th>
+        <th scope="col">Link</th>
     </tr>
     </thead>
     <tbody>
     <tr>
         <th scope="row"></th>
     <tr th:each="post: ${posts}">
-        <td th:text="${post.getVotes()}"></td>
-        <td><button type="button" class="btn btn-success btn-xs">Up Vote</button></td>
-        <td><button type="button" class="btn btn-danger btn-xs">Down Vote</button></td>
+        <td>
+            <span class="badge" th:text="${post.getVotes()}">  </span>
+        </td>
+        <td>
+            <button type="button" class="btn btn-success btn-xs">Up Vote</button>
+            <button type="button" class="btn btn-danger btn-xs">Down Vote</button>
+        </td>
         <td th:text="${post.getDescription()}"></td>
+        <td>
+            <a th:href= "@{|${post.getLink()}|}">Link</a>
+        </td>
     </tbody>
 </table>
+
+<div class="pagination">
+    <a href="#">&laquo;</a>
+    <a href="#" class="active">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="#">6</a>
+    <a href="#">&raquo;</a>
+</div>
 
 <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
 <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>

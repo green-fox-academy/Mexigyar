@@ -17,14 +17,27 @@
 
 <body>
 
-<form action="http://localhost:8080/reddit/">
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Reddit</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/reddit/">Trending posts</a></li>
+            <li class="active"><a href="/reddit/add_post">Add new post</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<form action="#" th:action="@{/reddit/add_post}" method="POST">
     <div class="form-group">
         <label for="descripton">Description:</label>
-        <input type="text" class="form-control" id="descripton">
+        <input name="description" type="text" class="form-control" id="descripton">
     </div>
     <div class="form-group">
-        <label for="Link">URL:</label>
-        <input type="url" class="form-control" id="Link">
+        <label for="link">URL:</label>
+        <input name="link" type="url" class="form-control" id="Link">
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
 </form>
