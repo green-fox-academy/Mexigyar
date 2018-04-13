@@ -41,7 +41,6 @@
 
 <table class="table">
     <thead>
-
     <tr>
         <th scope="col">Votes</th>
         <th scope="col">
@@ -52,20 +51,20 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
         <th scope="row"></th>
     <tr th:each="post: ${posts}">
         <td>
             <span class="badge" th:text="${post.getVotes()}">  </span>
         </td>
         <td>
-            <button type="button" class="btn btn-success btn-xs">Up Vote</button>
-            <button type="button" class="btn btn-danger btn-xs">Down Vote</button>
+            <a class="btn btn-success btn-xs" th:href="'/reddit/' + ${post.getId()} + '/up'">Up Vote</a>
+            <a class="btn btn-danger btn-xs" th:href="'/reddit/' + ${post.getId()} + '/down'">Down Vote</a>
         </td>
         <td th:text="${post.getDescription()}"></td>
         <td>
             <a th:href= "@{|${post.getLink()}|}">Link</a>
         </td>
+    </tr>
     </tbody>
 </table>
 

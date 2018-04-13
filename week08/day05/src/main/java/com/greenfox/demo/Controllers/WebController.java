@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.ArrayList;
@@ -40,5 +41,18 @@ public class WebController {
         postRepo.save(new Post(link, description));
         return "redirect:/reddit/";
     }
+
+    @GetMapping(value = "/{id}/up")
+    public String upVote(@PathVariable Long id){
+        postService.addVote(id);
+        return "redirect:/reddit/";
+    }
+
+    @GetMapping(value = "/{id}/down")
+    public String downVote(@PathVariable Long id){
+        postService.downVote(id);
+        return "redirect:/reddit/";
+    }
+
 
 }
