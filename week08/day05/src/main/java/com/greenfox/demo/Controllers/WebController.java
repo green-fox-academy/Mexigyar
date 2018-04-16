@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 @Controller
 @RequestMapping(value = "/reddit")
-public class WebController {
+public class WebController{
 
 
     @Autowired
@@ -22,6 +22,8 @@ public class WebController {
 
     @Autowired
     PostService postService;
+
+
 
 
     @GetMapping(value = "/")

@@ -10,10 +10,10 @@ public class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
-    int votes;
-    String link;
-    String description;
+    public Long id;
+    public int votes;
+    public String link;
+    public String description;
 
     public Post(String link, String description) {
         this.votes = 0;
