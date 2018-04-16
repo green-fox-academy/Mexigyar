@@ -1,19 +1,28 @@
 package com.greefox.restdemo.Models;
 
 public class Doubling {
-    int result;
+    Integer received;
+    Integer result;
 
 
     public Doubling(int input) {
+        this.received = input;
         this.result = input * 2;
     }
 
-    public int getInput() {
-        return result;
+    public void setReceived(Integer received) {
+        this.received = received;
     }
 
+    public void setResult(Integer result) {
+        this.result = result;
+    }
 
-    public void setInput(int input) {
-        this.result = input;
+    public Integer getReceived() {
+        return received;
+    }
+
+    public Integer getResult() {
+        return result;
     }
 }

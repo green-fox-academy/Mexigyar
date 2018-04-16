@@ -1,9 +1,11 @@
 package com.greefox.restdemo.Models;
 
-public class Error {
+public class ErrorMessage {
     String errorMessage;
 
-    public Error(String errorMessage) {
+    public ErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
+
+
 }
