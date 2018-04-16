@@ -4,7 +4,7 @@ public class Appendable {
     String appendable;
 
     public Appendable(String appendable) {
-        this.appendable = appendable;
+        this.appendable = appendable + "a";
     }
 
     public String getAppendable() {

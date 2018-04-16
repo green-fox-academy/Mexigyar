@@ -2,12 +2,11 @@ package com.greefox.restdemo.Controllers;
 
 import com.greefox.restdemo.Models.Appendable;
 import com.greefox.restdemo.Models.Doubling;
+import com.greefox.restdemo.Models.Error;
 import com.greefox.restdemo.Models.Greater;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import com.greefox.restdemo.Models.DoUntil;
+import org.springframework.web.bind.annotation.*;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
@@ -15,11 +14,11 @@ public class RestController {
     @GetMapping(value = "/doubling")
     public Object doubling(@RequestParam Integer input) {
         if (input != null) {
-            return new Doubling(input).toString();
+            return new Doubling(input);
         } else {
-            return "{\n" +
+            return new Error("{\n" +
                     "  \"error\": \"Csicska vagy!\"\n" +
-                    "}";
+                    "}");
         }
     }
 
@@ -35,9 +34,13 @@ public class RestController {
     }
 
     @GetMapping(value = "/appenda/{appendable}")
-    public Object appendable(@PathVariable String appendable){
-        return new Appendable(appendable + "a").toString();
+    public Object appendable(@PathVariable (value = "appendable")String word){
+        return new Appendable(word);
     }
 
+    @PostMapping(value = "/dountil/{what}")
+    public Object doUntil(@PathVariable (value = "what")String task,@RequestParam int number){
+        return new DoUntil(task, number).getResult();
+    }
 }
 
