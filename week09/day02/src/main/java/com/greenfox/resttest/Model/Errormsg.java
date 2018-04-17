@@ -2,7 +2,7 @@ package com.greenfox.resttest.Model;
 
 public class Errormsg {
 
-    String errormsg;
+    private String errormsg;
 
     public Errormsg(String errormsg) {
         this.errormsg = errormsg;

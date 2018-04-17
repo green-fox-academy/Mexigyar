@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class YonduController {
 
-    @GetMapping(value = "/yondu")
-    public Object imgroot(@RequestParam(value = "distance", required = false) Integer distance, @RequestParam(value = "time", required = false) Integer time) {
-        if (distance != null && time != null){
-            return new Yondu(distance,time);
+    @GetMapping("/yondu")
+    public Object yondu(@RequestParam(value = "distance", required = false) Integer distance, @RequestParam(value = "time", required = false) Integer time) {
+        if (distance != null && time != null) {
+            return new Yondu(distance, time);
         } else {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Errormsg("ERROR"));
         }

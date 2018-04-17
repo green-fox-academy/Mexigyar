@@ -2,8 +2,8 @@ package com.greenfox.resttest.Model;
 
 public class Guardian {
 
-    String recieved;
-    String translated;
+    private String recieved;
+    private String translated;
 
     public Guardian() {
     }
@@ -12,6 +12,7 @@ public class Guardian {
         this.recieved = recieved;
         this.translated = "I am Groot";
     }
+
 
     public String getRecieved() {
         return recieved;

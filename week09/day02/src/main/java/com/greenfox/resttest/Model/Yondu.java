@@ -2,14 +2,18 @@ package com.greenfox.resttest.Model;
 
 public class Yondu {
 
-    int distance;
-    int time;
-    int speed;
+    private int distance;
+    private int time;
+    private int speed;
 
     public Yondu(int distance, int time) {
         this.distance = distance;
         this.time = time;
         this.speed = distance / time;
+    }
+
+    public Yondu(int distance) {
+        this.distance = distance;
     }
 
     public void setDistance(int distance) {
