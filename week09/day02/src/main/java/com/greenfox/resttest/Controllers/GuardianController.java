@@ -12,4 +12,6 @@ public class GuardianController {
     public Object imgroot(@RequestParam(value = "message", required=false)String somemessage){
         return new Guardian(somemessage);
     }
+
+
 }
