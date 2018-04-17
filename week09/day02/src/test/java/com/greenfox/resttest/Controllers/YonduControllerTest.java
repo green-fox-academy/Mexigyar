@@ -7,7 +7,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -19,7 +18,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebAppConfiguration
 @EnableWebMvc
 @AutoConfigureMockMvc
-public class GuardianControllerTest {
+
+public class YonduControllerTest {
+
 
     @Autowired
     private MockMvc mockMvc;
@@ -30,19 +31,12 @@ public class GuardianControllerTest {
     @Test
     public void guardianGetTest()throws Exception{
         mockMvc
-                .perform(get("/groot?message=hi"))
+                .perform(get("/yondu?distance=10?time=10"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.recieved").value("hi"))
-                .andExpect(jsonPath("$.translated").value("I am Groot"));
-       }
+                .andExpect(jsonPath("$.distance").value("10"))
+                .andExpect(jsonPath("$.time").value("10"))
+                .andExpect(jsonPath("$.speed").value("1"));
+    }
 
 
-    @Test
-    public void guardianGetTestNoParam()throws Exception{
-        mockMvc
-                .perform(get("/groot"))
-                .andExpect(status().isBadRequest())
-                .andExpect(jsonPath("$.errormsg").value("ERROR"));
-
-       }
 }
