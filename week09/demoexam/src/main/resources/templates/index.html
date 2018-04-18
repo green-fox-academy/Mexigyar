@@ -22,21 +22,17 @@
     </thead>
     <tbody>
     <th scope="row"></th>
-   <tr>
-        <td>1 </td>
-        <td>
-2
+   <tr th:each="planet : ${planets}">
+        <td th:text="${planet.getName()}"></td>
+        <td th:text="${planet.getPopulation()}">
         </td>
-        <td>
-3
-
-        </td>
-        <td>
-4
+        <td> hali</td>
+        <td th:text="${planet.getId()}">
         </td>
     </tr>
     </tbody>
 </table>
+
 
 <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
 <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>

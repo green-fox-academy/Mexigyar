@@ -1,7 +1,9 @@
 package com.greefox.demoexam.Controllers;
 
 import com.greefox.demoexam.Modell.Planet;
+import com.greefox.demoexam.Modell.SpaceShip;
 import com.greefox.demoexam.Repsitories.PlanetRepository;
+import com.greefox.demoexam.Repsitories.SpaceShipRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,12 +19,17 @@ public class WebController {
     @Autowired
     PlanetRepository planetRepository;
 
+    @Autowired
+    SpaceShipRepository spaceShipRepository;
+
     @GetMapping("/")
     public String indexPage(Model model){
         ArrayList<Planet> planets = new ArrayList<>();
+        ArrayList<SpaceShip> ships = new ArrayList<>();
         planetRepository.findAll().forEach(planets::add);
+        spaceShipRepository.findAll().forEach(ships::add);
         model.addAttribute("planets",planets);
-        model.addAttribute("thing", planets);
+        model.addAttribute("ships", ships);
         return "index";
     }
 }

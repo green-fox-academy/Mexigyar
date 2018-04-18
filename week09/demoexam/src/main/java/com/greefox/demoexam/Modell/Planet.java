@@ -47,4 +47,13 @@ public class Planet {
     public void setPopulation(Integer population) {
         this.population = population;
     }
+
+    @Override
+    public String toString() {
+        return "Planet{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", population=" + population +
+                '}';
+    }
 }
