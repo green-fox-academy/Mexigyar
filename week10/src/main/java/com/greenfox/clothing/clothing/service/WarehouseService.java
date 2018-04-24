@@ -1,8 +1,8 @@
 package com.greenfox.clothing.clothing.service;
 
-import com.greenfox.clothing.clothing.repo.WarehouseRepo;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public interface WarehouseService {
 
 }

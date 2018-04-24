@@ -1,10 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Tourist Guiede</title>
+    <link href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="utf-8"/>
 </head>
+
 <body>
 
+<h1>Tourist Guide</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Manu</th>
+        <th scope="col">Category</th>
+        <th scope="col">Size</th>
+        <th scope="col">Price</th>
+        <th scope="col">In Store</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th scope="row"></th>
+    <tr th:each="item: ${warehouse}">
+        <td th:text="${item.getItemName()}"></td>
+        <td th:text="${item.getManufacturer()}"></td>
+        <td th:text="${item.getCategory()}"></td>
+        <td th:text="${item.getSize()}"></td>
+        <td th:text="${item.getUnitPrice()}"></td>
+        <td th:text="${item.getInStore()}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </body>
 </html>
