@@ -1,25 +1,20 @@
 package com.greenfox.clothing.clothing.models;
 
-import com.sun.tools.javac.util.List;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class JsonHouses {
 
     String result;
-    List<Warehouse> clothes;
+    ArrayList<Warehouse> clothes;
 
     public JsonHouses() {
-    }
-
-    public JsonHouses(List<Warehouse> clothes) {
         this.result = "ok";
-        this.clothes = clothes;
     }
 
-    public void setResult(String result) {
-        this.result = result;
-    }
-
-    public void setClothes(List<Warehouse> clothes) {
+    public JsonHouses(ArrayList<Warehouse> clothes) {
+        this.result = "ok";
         this.clothes = clothes;
     }
 
@@ -27,7 +22,15 @@ public class JsonHouses {
         return result;
     }
 
-    public List<Warehouse> getClothes() {
+    public ArrayList<Warehouse> getClothes() {
         return clothes;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
+
+    public void setClothes(ArrayList<Warehouse> clothes) {
+        this.clothes = clothes;
     }
 }

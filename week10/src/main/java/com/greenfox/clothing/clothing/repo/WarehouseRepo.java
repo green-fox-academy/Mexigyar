@@ -5,10 +5,14 @@ import com.sun.tools.javac.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
+
 
 @Repository
-public interface WarehouseRepo extends CrudRepository<Warehouse, Integer>{
-    List<Warehouse> findAllByUnitPriceIsLessThan(float price);
-    List<Warehouse> findAllByUnitPriceGreaterThan(float price);
-    List<Warehouse> findAllByUnitPriceEquals(float price);
+public interface WarehouseRepo extends CrudRepository<Warehouse, Integer> {
+    ArrayList<Warehouse> findAllByUnitPriceIsLessThan(float price);
+
+    ArrayList<Warehouse> findAllByUnitPriceGreaterThan(float price);
+
+    ArrayList<Warehouse> findAllByUnitPriceEquals(float price);
 }

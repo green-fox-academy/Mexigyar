@@ -11,52 +11,24 @@ public class Warehouse {
 
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
-    Integer id;
-    String itemName;
-    String manufacturer;
-    String category;
-    String size;
-    float unitPrice;
-    int inStore;
+    private Integer id;
+    private String itemName;
+    private String manufacturer;
+    private String category;
+    private String size;
+    private Float unitPrice;
+    private Integer inStore;
 
 
     public Warehouse() {
     }
 
-    public Warehouse(String itemName, String manufacturer, String category, String size, float unitPrice, int inStore) {
+    public Warehouse(String itemName, String manufacturer, String category, String size, Float unitPrice, Integer inStore) {
         this.itemName = itemName;
         this.manufacturer = manufacturer;
         this.category = category;
         this.size = size;
         this.unitPrice = unitPrice;
-        this.inStore = inStore;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
-    }
-
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
-    }
-
-    public void setUnitPrice(float unitPrice) {
-        this.unitPrice = unitPrice;
-    }
-
-    public void setInStore(int inStore) {
         this.inStore = inStore;
     }
 
@@ -80,11 +52,39 @@ public class Warehouse {
         return size;
     }
 
-    public float getUnitPrice() {
+    public Float getUnitPrice() {
         return unitPrice;
     }
 
-    public int getInStore() {
+    public Integer getInStore() {
         return inStore;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    public void setUnitPrice(Float unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
+    public void setInStore(Integer inStore) {
+        this.inStore = inStore;
     }
 }

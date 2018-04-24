@@ -14,14 +14,15 @@ public class RestController {
 
     @RequestMapping("/warehouse/query")
     public JsonHouses jsonResult(@RequestParam(value = "price") float price, @RequestParam(value = "type") String type) {
+        JsonHouses jsonHouses = new JsonHouses();
         if (type.equals("higher")){
-        warehouseRepo.findAllByUnitPriceGreaterThan(price);
+            jsonHouses.setClothes(warehouseRepo.findAllByUnitPriceGreaterThan(price));
         } else if (type.equals("lower")){
-        warehouseRepo.findAllByUnitPriceIsLessThan(price);
+            jsonHouses.setClothes(warehouseRepo.findAllByUnitPriceIsLessThan(price));
         } else if (type.equals("equals")){
-        warehouseRepo.findAllByUnitPriceEquals(price);
+            jsonHouses.setClothes(warehouseRepo.findAllByUnitPriceEquals(price));
         }
-        return new JsonHouses();
+        return jsonHouses;
     }
 }
 //price=50&type=lower
