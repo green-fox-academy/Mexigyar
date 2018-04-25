@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Tourist Guiede</title>
+    <title>Greenfox Store</title>
     <link href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -10,14 +10,24 @@
 
 <body>
 
-<h1>Tourist Guide</h1>
+<h1>Greenfox Fashion Store</h1>
+
+<div class="dropdown show">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Select item name
+    </a>
+
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" th:each="">
+        <a class="dropdown-item" href="#" th:text="">Action</a>
+    </div>
+</div>
 
 
 <table class="table">
     <thead>
     <tr>
         <th scope="col">Name</th>
-        <th scope="col">Manu</th>
+        <th scope="col">Manufacturer</th>
         <th scope="col">Category</th>
         <th scope="col">Size</th>
         <th scope="col">Price</th>
