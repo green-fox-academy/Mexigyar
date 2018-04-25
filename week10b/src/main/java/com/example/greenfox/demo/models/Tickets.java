@@ -27,6 +27,17 @@ public class Tickets {
         this.reportedAt = reportedAt;
     }
 
+
+  public Tickets(String reporter, String manufacturer, Long serailnumber, String description) {
+        this.reporter = reporter;
+        this.manufacturer = manufacturer;
+        this.serialnumber = serailnumber;
+        this.description = description;
+        this.reportedAt = "Who knows";
+    }
+
+
+
     public void setId(Integer id) {
         this.id = id;
     }

@@ -12,19 +12,18 @@
 
 <h1>Report</h1>
 
-<form action="/action_page.php">
-    <div class="form-group">
-        <label for="email">Email address:</label>
-        <input type="email" class="form-control" id="email">
-    </div>
-    <div class="form-group">
-        <label for="pwd">Password:</label>
-        <input type="password" class="form-control" id="pwd">
-    </div>
-    <div class="checkbox">
-        <label><input type="checkbox"> Remember me</label>
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+<form action="#" th:action="@{/report}" method="post">
+    name:<br>
+    <select name="reporter">
+        <option th:each="user: ${users}" th:value="${user.getName()}" th:text="${user.getName()}"></option>
+    </select><br>
+    manufacturer:<br>
+    <input type="text" name="manufacturer"><br><br>
+    serialnumber:<br>
+    <input type="number" name="serialnumber"><br><br>
+    description:<br>
+    <input type="text" name="description"><br><br>
+    <input type="submit" value="Report" >
 </form>
 
 
