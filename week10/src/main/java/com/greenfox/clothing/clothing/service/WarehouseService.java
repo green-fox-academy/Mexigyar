@@ -8,7 +8,7 @@ import java.util.List;
 @Service
 public interface WarehouseService {
 
-    public List<String> getAvailableItems();
-
+    List<String> getAvailableItemNames();
+    List<String> getAvailableItemSizes();
 
 }

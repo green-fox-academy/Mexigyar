@@ -9,24 +9,7 @@
 </head>
 
 <body>
-
 <h1>Greenfox Fashion Store</h1>
-
-<form action="#" th:action="@{/warehouse/summary}" method="post">
-
-<select name="item">
-    <option th:each="itemName: ${itemNames}" th:value="${itemName}" th:text="${itemName}"></option>
-</select>
-
-    <select name="size">
-        <option th:each="itemSize: ${itemSizes}" th:value="${itemSize}"  th:text="${itemSize}"></option>
-    </select>
-
-    <input type="text" name="numberOfItems"><br><br>
-    <input type="submit" value="GetTotal" >
-</form>
-
-
 
 <table class="table">
     <thead>
@@ -35,19 +18,19 @@
         <th scope="col">Manufacturer</th>
         <th scope="col">Category</th>
         <th scope="col">Size</th>
-        <th scope="col">Price</th>
-        <th scope="col">In Store</th>
+        <th scope="col">Amount</th>
+        <th scope="col"><b>Total Price</b></th>
     </tr>
     </thead>
     <tbody>
     <th scope="row"></th>
-    <tr th:each="item: ${warehouse}">
+    <tr>
         <td th:text="${item.getItemName()}"></td>
         <td th:text="${item.getManufacturer()}"></td>
         <td th:text="${item.getCategory()}"></td>
-        <td th:text="${item.getSize()}"></td>
-        <td th:text="${item.getUnitPrice()}"></td>
-        <td th:text="${item.getInStore()}"></td>
+        <td th:text="${size}"></td>
+        <td th:text="${amount}"></td>
+        <td th:text="${totalPrice}"></td>
     </tr>
     </tbody>
 </table>

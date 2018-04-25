@@ -6,8 +6,8 @@ import java.util.List;
 
 public class JsonHouses {
 
-    String result;
-    ArrayList<Warehouse> clothes;
+   private String result;
+  private   ArrayList<Warehouse> clothes;
 
     public JsonHouses() {
         this.result = "ok";

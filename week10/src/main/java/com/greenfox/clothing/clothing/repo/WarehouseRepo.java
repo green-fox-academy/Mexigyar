@@ -11,8 +11,7 @@ import java.util.ArrayList;
 @Repository
 public interface WarehouseRepo extends CrudRepository<Warehouse, Integer> {
     ArrayList<Warehouse> findAllByUnitPriceIsLessThan(float price);
-
     ArrayList<Warehouse> findAllByUnitPriceGreaterThan(float price);
-
     ArrayList<Warehouse> findAllByUnitPriceEquals(float price);
+    Warehouse findFirstByItemNameEquals(String name);
 }
