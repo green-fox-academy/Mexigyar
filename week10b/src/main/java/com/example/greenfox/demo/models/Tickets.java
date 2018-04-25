@@ -1,5 +1,6 @@
 package com.example.greenfox.demo.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,7 +13,8 @@ public class Tickets {
     Integer id;
     String reporter;
     String manufacturer;
-    Long serialnumber;
+    @Column(name="serialnumber")
+    Long serialNumber;
     String description;
     String reportedAt;
 
@@ -22,7 +24,7 @@ public class Tickets {
     public Tickets(String reporter, String manufacturer, Long serailnumber, String description, String reportedAt) {
         this.reporter = reporter;
         this.manufacturer = manufacturer;
-        this.serialnumber = serailnumber;
+        this.serialNumber = serailnumber;
         this.description = description;
         this.reportedAt = reportedAt;
     }
@@ -31,7 +33,7 @@ public class Tickets {
   public Tickets(String reporter, String manufacturer, Long serailnumber, String description) {
         this.reporter = reporter;
         this.manufacturer = manufacturer;
-        this.serialnumber = serailnumber;
+        this.serialNumber = serailnumber;
         this.description = description;
         this.reportedAt = "Who knows";
     }
@@ -51,7 +53,7 @@ public class Tickets {
     }
 
     public void setSerailnumber(Long serailnumber) {
-        this.serialnumber = serailnumber;
+        this.serialNumber = serailnumber;
     }
 
     public void setDescription(String description) {
@@ -75,7 +77,7 @@ public class Tickets {
     }
 
     public Long getSerailnumber() {
-        return serialnumber;
+        return serialNumber;
     }
 
     public String getDescription() {
