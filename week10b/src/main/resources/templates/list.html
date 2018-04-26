@@ -25,11 +25,11 @@
     </thead>
     <tbody>
     <th scope="row"></th>
-    <tr th:each="ticket: ${tickets}">
-        <td th:text="${ticket.getId()}"></td>
+    <tr th:each="ticket: ${tickets}" th:object="${ticket}">
+        <td th:text="*{id}"></td>
         <td th:text="${ticket.getReporter()}"></td>
         <td th:text="${ticket.getManufacturer()}"></td>
-        <td th:text="${ticket.getSerailnumber()}"></td>
+        <td th:text="${ticket.getSerialNumber()}"></td>
         <td th:text="${ticket.getDescription()}"></td>
         <td th:text="${ticket.getReportedAt()}"></td>
     </tr>

@@ -21,24 +21,20 @@ public class Tickets {
     public Tickets() {
     }
 
-    public Tickets(String reporter, String manufacturer, Long serailnumber, String description, String reportedAt) {
+    public Tickets(String reporter, String manufacturer, Long serialNumber, String description) {
         this.reporter = reporter;
         this.manufacturer = manufacturer;
-        this.serialNumber = serailnumber;
+        this.serialNumber = serialNumber;
+        this.description = description;
+    }
+
+    public Tickets(String reporter, String manufacturer, Long serialNumber, String description, String reportedAt) {
+        this.reporter = reporter;
+        this.manufacturer = manufacturer;
+        this.serialNumber = serialNumber;
         this.description = description;
         this.reportedAt = reportedAt;
     }
-
-
-  public Tickets(String reporter, String manufacturer, Long serailnumber, String description) {
-        this.reporter = reporter;
-        this.manufacturer = manufacturer;
-        this.serialNumber = serailnumber;
-        this.description = description;
-        this.reportedAt = "Who knows";
-    }
-
-
 
     public void setId(Integer id) {
         this.id = id;
@@ -52,8 +48,8 @@ public class Tickets {
         this.manufacturer = manufacturer;
     }
 
-    public void setSerailnumber(Long serailnumber) {
-        this.serialNumber = serailnumber;
+    public void setSerialNumber(Long serialNumber) {
+        this.serialNumber = serialNumber;
     }
 
     public void setDescription(String description) {
@@ -76,7 +72,7 @@ public class Tickets {
         return manufacturer;
     }
 
-    public Long getSerailnumber() {
+    public Long getSerialNumber() {
         return serialNumber;
     }
 
@@ -87,6 +83,4 @@ public class Tickets {
     public String getReportedAt() {
         return reportedAt;
     }
-
-    //(reporter, manufacturer, serialnumber, description, reported_at)
 }
