@@ -1,0 +1,23 @@
+version: '3'
+services:
+  docker-mysql:
+    image: mysql:latest
+    container_name: docker-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_PASSWORD: 12345
+      MYSQL_DATABASE: clothing
+    ports:
+      - 3306
+
+  spring-boot-jpa-docker-webapp:
+    image: 7893d3d4b294
+    environment:
+      JDBC_DATABASE_URL: jdbc:mysql://docker-mysql/clothing
+      JDBC_DATABASE_USERNAME: root
+      JDBC_DATABASE_PASSWORD: 12345
+    depends_on:
+      - docker-mysql
+    ports:
+      - 8080:8080

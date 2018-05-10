@@ -1,7 +1,6 @@
 package com.greenfox.clothing.clothing.repo;
 
 import com.greenfox.clothing.clothing.models.Warehouse;
-import com.sun.tools.javac.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
