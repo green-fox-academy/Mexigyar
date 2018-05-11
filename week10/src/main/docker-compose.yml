@@ -1,10 +1,11 @@
 version: '3'
 services:
   docker-mysql:
-    image: mysql:latest
+    image: mariadb:latest
     container_name: docker-mysql
     restart: always
     environment:
+      MYSQL_USER: root
       MYSQL_ROOT_PASSWORD: 12345
       MYSQL_PASSWORD: 12345
       MYSQL_DATABASE: clothing
@@ -12,7 +13,7 @@ services:
       - 3306
 
   spring-boot-jpa-docker-webapp:
-    image: 7893d3d4b294
+    image: com.greenfox.clothing/clothing:0.0.1-SNAPSHOT
     environment:
       JDBC_DATABASE_URL: jdbc:mysql://docker-mysql/clothing
       JDBC_DATABASE_USERNAME: root
